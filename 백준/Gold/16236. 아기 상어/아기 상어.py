@@ -35,7 +35,8 @@ def bfs(x,y,t):
                 if graph[nx][ny] != 0 and graph[nx][ny] < shark[0]:
                     lst.append([nx,ny,t+1])
     if lst:
-        lst.sort(lambda i:(i[2],i[0],i[1]))
+
+        lst.sort(key = lambda i :(i[2],i[0],i[1]))
         # print(x,y)
         # print(lst)
         fx, fy, t = lst[0]
