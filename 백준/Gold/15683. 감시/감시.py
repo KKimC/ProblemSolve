@@ -41,12 +41,9 @@ def dfs(i):
         maxx = min(count,maxx)
         return
     for j in range(4):
-        if not visited[i][j]:
-            fun_dic[q[i][2]](q[i][0],q[i][1],j,1)
-            visited[i][j] = True
-            dfs(i+1)
-            visited[i][j] = False
-            fun_dic[q[i][2]](q[i][0],q[i][1],j,-1)
+        fun_dic[q[i][2]](q[i][0],q[i][1],j,1)
+        dfs(i+1)
+        fun_dic[q[i][2]](q[i][0],q[i][1],j,-1)
 
 
 q = []
@@ -54,6 +51,5 @@ for idx,ial in enumerate(graph):
     for jdx,jal in enumerate(ial):
         if 0<jal<6:
             q.append((idx,jdx,jal))
-visited = [[False] * 4 for _ in range(len(q))]
 dfs(0)
 print(maxx)
