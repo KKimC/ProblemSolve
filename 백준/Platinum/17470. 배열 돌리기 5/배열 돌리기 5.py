@@ -1,21 +1,31 @@
+
+
 def one():
-    global look,look1
+    global look, look1
     mini[0][0], mini[1][0] = mini[1][0], mini[0][0]
     mini[0][1], mini[1][1] = mini[1][1], mini[0][1]
-    if look == 0:look = 2
-    elif look == 2:look = 0
-    if look1 == 0:look1 = 2
-    elif look1 == 2:look1 = 0
+    if look == 0:
+        look = 2
+    elif look == 2:
+        look = 0
+    if look1 == 0:
+        look1 = 2
+    elif look1 == 2:
+        look1 = 0
 
 
 def two():
-    global look,look1
+    global look, look1
     mini[0][0], mini[0][1] = mini[0][1], mini[0][0]
     mini[1][0], mini[1][1] = mini[1][1], mini[1][0]
-    if look == 1: look = 3
-    elif look == 3: look = 1
-    if look1 == 1: look1 = 3
-    elif look1 == 3: look1 = 1
+    if look == 1:
+        look = 3
+    elif look == 3:
+        look = 1
+    if look1 == 1:
+        look1 = 3
+    elif look1 == 3:
+        look1 = 1
 
 
 def three():
@@ -47,7 +57,7 @@ def three():
 
 
 def four():
-    global look,look1
+    global look, look1
     a = mini[0][0]
     b = mini[0][1]
     c = mini[1][0]
@@ -95,26 +105,29 @@ def six():
     mini[1][0] = a
     mini[1][1] = d
 
+
 def oneone(graph2):
     n = len(graph2)
     m = len(graph2[0])
-    for i in range(n//2):
+    for i in range(n // 2):
         arr = graph2[i][:]
         for j in range(m):
-            graph2[i][j] = graph2[n-1-i][j]
+            graph2[i][j] = graph2[n - 1 - i][j]
         for j in range(m):
-            graph2[n-1-i][j] = arr[j]
+            graph2[n - 1 - i][j] = arr[j]
+
+
 def twotwo(graph2):
     n = len(graph2)
     m = len(graph2[0])
-    for i in range(m//2):
+    for i in range(m // 2):
         arr = []
         for j in range(n):
             arr.append(graph2[j][i])
         for j in range(n):
-            graph2[j][i] = graph2[j][m-i-1]
+            graph2[j][i] = graph2[j][m - i - 1]
         for j in range(n):
-            graph2[j][m-i-1] = arr[j]
+            graph2[j][m - i - 1] = arr[j]
 
 
 look = 0
