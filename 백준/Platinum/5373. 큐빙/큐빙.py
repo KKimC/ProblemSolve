@@ -1,3 +1,5 @@
+import sys
+
 def turn_left(arr):
     new_arr = [arr[6],arr[3],arr[0],arr[7],arr[4],arr[1],arr[8],arr[5],arr[2]]
     return new_arr
@@ -117,7 +119,7 @@ def turn_r_m():
 move = {"U+":turn_u_p,"U-":turn_u_m,"D+":turn_d_p,"D-":turn_d_m,"F+":turn_f_p,"F-":turn_f_m,"B+":turn_b_p,"B-":turn_b_m,"L+":turn_l_p,"L-":turn_l_m,"R+":turn_r_p,"R-":turn_r_m}
 result = ''
 for t in range(int(input())):
-    input()
+    sys.stdin.readline().rstrip()
     u = ['w'] * 9
     # u = [1,2,3,4,5,6,7,8,9]
     d = ['y'] * 9
@@ -126,7 +128,7 @@ for t in range(int(input())):
     b = ['o'] * 9
     l = ['g'] * 9
     r = ['b'] * 9
-    for j in input().split():
+    for j in sys.stdin.readline().rstrip().split():
         move[j]()
     result += f'{u[0]}{u[1]}{u[2]}\n{u[3]}{u[4]}{u[5]}\n{u[6]}{u[7]}{u[8]}\n'
 print(result)
