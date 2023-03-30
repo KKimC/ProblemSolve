@@ -1,3 +1,4 @@
+
 def turn_left(arr):
     new_arr = [arr[6],arr[3],arr[0],arr[7],arr[4],arr[1],arr[8],arr[5],arr[2]]
     return new_arr
